@@ -1,0 +1,116 @@
+{
+    "homo sapiens - bedMethyl filter - stub": {
+        "content": [
+            {
+                "0": [
+                    [
+                        {
+                            "id": "HG002"
+                        },
+                        "HG002.filtered.bed.gz:md5,68b329da9893e34099c7d8ad5cb9c940",
+                        "HG002.filtered.bed.gz.tbi:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "1": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "bgzip",
+                        "1.20"
+                    ]
+                ],
+                "2": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "tabix",
+                        "1.20"
+                    ]
+                ],
+                "bedmethyl": [
+                    [
+                        {
+                            "id": "HG002"
+                        },
+                        "HG002.filtered.bed.gz:md5,68b329da9893e34099c7d8ad5cb9c940",
+                        "HG002.filtered.bed.gz.tbi:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "versions_bgzip": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "bgzip",
+                        "1.20"
+                    ]
+                ],
+                "versions_tabix": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "tabix",
+                        "1.20"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-04-22T04:35:54.696353785",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.04.6"
+        }
+    },
+    "homo sapiens - bedMethyl filter - default threshold": {
+        "content": [
+            {
+                "0": [
+                    [
+                        {
+                            "id": "HG002"
+                        },
+                        "HG002.filtered.bed.gz:md5,a9702c0ba6e9c9626c810b4379c336a6",
+                        "HG002.filtered.bed.gz.tbi:md5,c029796ea44c03fabed47db9eecbfdf4"
+                    ]
+                ],
+                "1": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "bgzip",
+                        "1.20"
+                    ]
+                ],
+                "2": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "tabix",
+                        "1.20"
+                    ]
+                ],
+                "bedmethyl": [
+                    [
+                        {
+                            "id": "HG002"
+                        },
+                        "HG002.filtered.bed.gz:md5,a9702c0ba6e9c9626c810b4379c336a6",
+                        "HG002.filtered.bed.gz.tbi:md5,c029796ea44c03fabed47db9eecbfdf4"
+                    ]
+                ],
+                "versions_bgzip": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "bgzip",
+                        "1.20"
+                    ]
+                ],
+                "versions_tabix": [
+                    [
+                        "MODKIT_FILTERBEDMETHYL",
+                        "tabix",
+                        "1.20"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-04-22T04:40:47.330625136",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.04.6"
+        }
+    }
+}
