@@ -25,7 +25,10 @@ process MODKIT_DMR_PAIR {
     def args        = task.ext.args   ?: ''
     def prefix      = task.ext.prefix ?: "${meta.id}"
     def regions_arg = regions_bed     ? "--regions-bed ${regions_bed}" : ''
-    def segment_arg = "--segment ${prefix}.dmr_segments.bed"
+    // --segment and --regions-bed are mutually exclusive in modkit dmr pair:
+    // with --regions-bed, modkit scores each region directly (no HMM) and
+    // the segments output is neither produced nor allowed.
+    def segment_arg = regions_bed     ? '' : "--segment ${prefix}.dmr_segments.bed"
     """
     modkit \\
         dmr pair \\
