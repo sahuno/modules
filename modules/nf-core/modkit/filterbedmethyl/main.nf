@@ -36,8 +36,19 @@ process MODKIT_FILTERBEDMETHYL {
 
     before=\$(zcat ${bedmethyl_gz} | wc -l)
 
+    # Preserve header lines:
+    #   /^#/             — explicit comment/BED-style header
+    #   \$10 !~ numeric  — bare column-name header (modkit pileup --header emits
+    #                     'valid_coverage' as the column-10 value on row 1).
+    # Under gawk, a non-numeric string in \$10 falls back to string comparison,
+    # which makes "valid_coverage" <= 65534 false — so the header gets dropped
+    # without an explicit rule. Pass it through verbatim first.
     zcat ${bedmethyl_gz} \\
-        | awk -v MAX="\${max_cov}" 'BEGIN{FS=OFS="\\t"} \$10 <= MAX' \\
+        | awk -v MAX="\${max_cov}" '
+            BEGIN { FS = OFS = "\\t" }
+            /^#/               { print; next }
+            \$10 !~ /^[0-9]+\$/ { print; next }
+            \$10 <= MAX' \\
         | bgzip --threads ${task.cpus} \\
         > ${prefix}.filtered.bed.gz
 
